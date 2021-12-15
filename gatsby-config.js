@@ -26,7 +26,7 @@ module.exports = {
       options: {
         defaultLayouts: {
           // the component that will be used to render MDX pages
-          default: path.resolve('./src/components/markdown-page.js'),
+          default: path.resolve('./src/components/markdown-page.tsx'),
         },
       },
     },

@@ -1,3 +1,5 @@
+const defaultTheme = require('tailwindcss/defaultTheme');
+
 module.exports = {
   content: [
     // only the tailwind classes that are found in these files will be included in the production bundle!
@@ -8,6 +10,10 @@ module.exports = {
     // classes in this array are ALWAYS included, regardless of whether they appear in "content"
   ],
   theme: {
+    fontFamily: {
+      heading: ['Roboto', ...defaultTheme.fontFamily.sans],
+      body: ['Assistant', ...defaultTheme.fontFamily.sans],
+    },
     extend: {},
   },
   plugins: [],
