@@ -21,6 +21,7 @@ module.exports = {
         icon: 'src/images/icon.png',
       },
     },
+    'gatsby-remark-images',
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
@@ -28,6 +29,15 @@ module.exports = {
           // the component that will be used to render MDX pages
           default: path.resolve('./src/components/markdown-page.tsx'),
         },
+        gatsbyRemarkPlugins: [
+          {
+            resolve: 'gatsby-remark-images',
+            options: {
+              // approximately matches .max-w-4xl as used in markdown-page.tsx
+              maxWidth: 850,
+            },
+          },
+        ],
       },
     },
     'gatsby-plugin-sharp',
