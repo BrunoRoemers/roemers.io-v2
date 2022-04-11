@@ -1,5 +1,102 @@
-import Link from '../components/link'
+---
+title: Test MDX Page (title)
+slug: "/mytest"
+---
 
 # Test MDX Page
 
-<Link to="/">Go back to the homepage</Link>
+## Subheading
+
+### Sub-subheading
+
+hello world
+
+I love this site!
+
+> this is a quote
+
+**Consequatur** quia _magnam_ deleniti quasi. ~~Repellat~~ ut iusto sint quo. Eos maxime est soluta repellendus et.
+Quidem ea voluptate consequuntur `libero` id sed. Consequuntur id amet occaecati dolorem qui dignissimos
+asperiores accusamus. Porro alias nam commodi animi ut.
+
+![alt](https://mdx-logo.now.sh)
+
+Delectus aut non nisi minima. Consectetur quos sit aliquam consequatur alias itaque.
+In quisquam impedit ad qui nam eligendi. Ut quibusdam unde provident enim eos eius dolorem nesciunt.
+Culpa aliquam omnis et voluptatem nulla.
+
+Ut et ipsam quo ad quaerat. Totam vel eligendi similique consequatur adipisci enim dolores.
+Voluptates et ullam ea eius ipsam perspiciatis eos ratione.
+
+Velit tenetur quas perferendis repellat voluptas. Rerum eos autem harum quo et aut aut.
+Aut autem est maiores ut facere sit saepe inventore. Voluptatem deleniti eius autem ut autem eos.
+Consectetur quae eum autem consequuntur sed suscipit facilis veritatis.
+
+Animi voluptatem dolores quia necessitatibus similique corporis nostrum vel.
+Dicta ea quia minus qui quasi non veniam soluta. Accusantium dolorum laborum et harum impedit aut eos.
+
+This is an unordered list:
+- bread
+  - crust
+  - brown
+  - cereal
+- milk
+- eggs
+- flour
+
+This is an ordered list:
+1. gold
+   1. first prize
+   1. winner
+   1. champion
+1. silver
+   1. second prize
+1. bronze
+   1. third prize
+
+
+```html
+<html>
+  <body>
+    <h1>Hello World</h1>
+    <p>lorem ipsum...</p>
+  </body>
+</html>
+```
+
+```jsx
+import { MDXProvider } from '@mdx-js/react'
+import * as React from 'react'
+import CodeBlock from './code-block'
+import Container from './container'
+import Theme from './theme'
+
+interface Props {
+  children?: React.ReactNode,
+}
+
+// example see https://github.com/gatsbyjs/gatsby-starter-mdx-basic/blob/master/src/components/layout.js
+const MarkdownPage = ({ children }: Props) => {
+  return (
+    <Theme>
+      <Container>
+        <article>
+          <MDXProvider components={{
+            // docs, see: https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/
+            h1: props => <h1 {...props} className='text-red-600'/>,
+            code: ({children, className}) => <CodeBlock language={className.replace('language-', '')}>{children.trim()}</CodeBlock>,
+          }}>
+            {children}
+          </MDXProvider>
+        </article>
+      </Container>
+    </Theme>
+  )
+}
+
+export default MarkdownPage
+```
+
+[external link](https://example.com)
+
+[Go back to the homepage](/)
