@@ -8,7 +8,7 @@ interface Props {
 export const Container = ({ children }: Props) => {
   return (
     <div className="flex justify-center">
-      <div className='px-6 grow max-w-4xl'>
+      <div className='px-6 grow max-w-full lg:max-w-4xl'>
         {children}
       </div>
     </div>
