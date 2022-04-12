@@ -9,7 +9,7 @@ const _setFragment = (str: string) => window.location.hash = str;
  */
 const useUrlFragment = (): [string, React.Dispatch<React.SetStateAction<string>>] => {
   // internal state
-  const [urlFragment, setUrlFragment] = useState(_getFragment());
+  const [urlFragment, setUrlFragment] = useState(typeof window === 'undefined' ? '' : _getFragment());
 
   // listen for changes to the url
   // NOTE: effect only runs once during lifecycle of the component
