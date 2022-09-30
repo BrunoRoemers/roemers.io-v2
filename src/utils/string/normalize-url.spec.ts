@@ -4,18 +4,31 @@ import removeEnd from "./remove-end";
 describe('normalizeUrl', () => {
 
   const cases: [string, string, string][] = [
-    [null, '/path/to/page', 'path/to/page'],
-    [undefined, '/path/to/page', 'path/to/page'],
-    ['', '/path/to/page', 'path/to/page'],
+    [null, '/path/to/page', '/path/to/page'],
+    [undefined, '/path/to/page', '/path/to/page'],
+    ['', '/path/to/page', '/path/to/page'],
 
-    [null, 'http://roemers.io/path/to/page', 'path/to/page'],
-    [undefined, 'http://roemers.io/path/to/page', 'path/to/page'],
-    ['', 'http://roemers.io/path/to/page', 'path/to/page'],
+    [null, '/path/to/page/', '/path/to/page'],
+    [undefined, '/path/to/page/', '/path/to/page'],
+    ['', '/path/to/page/', '/path/to/page'],
 
-    [null, 'https://roemers.io/path/to/page', 'path/to/page'],
-    [undefined, 'https://roemers.io/path/to/page', 'path/to/page'],
-    ['', 'https://roemers.io/path/to/page', 'path/to/page'],
+    [null, 'path/to/page', 'path/to/page'],
+    [undefined, 'path/to/page', 'path/to/page'],
+    ['', 'path/to/page', 'path/to/page'],
 
+    [null, 'path/to/page/', 'path/to/page'],
+    [undefined, 'path/to/page/', 'path/to/page'],
+    ['', 'path/to/page/', 'path/to/page'],
+
+    [null, 'http://roemers.io/path/to/page', '/path/to/page'],
+    [undefined, 'http://roemers.io/path/to/page', '/path/to/page'],
+    ['', 'http://roemers.io/path/to/page', '/path/to/page'],
+
+    [null, 'https://roemers.io/path/to/page', '/path/to/page'],
+    [undefined, 'https://roemers.io/path/to/page', '/path/to/page'],
+    ['', 'https://roemers.io/path/to/page', '/path/to/page'],
+
+    ['/', 'path/to/page', '/path/to/page'],
     ['/', '/path/to/page', '/path/to/page'],
     ['/', 'http://roemers.io/path/to/page', '/path/to/page'],
     ['/', 'https://roemers.io/path/to/page', '/path/to/page'],
@@ -33,6 +46,8 @@ describe('normalizeUrl', () => {
     ['http://roemers.io/', '/path/to/page', 'http://roemers.io/path/to/page'],
     ['http://roemers.io', '/path/to/page/', 'http://roemers.io/path/to/page'],
     ['http://roemers.io', 'path/to/page/', 'http://roemers.io/path/to/page'],
+    // TODO maybe this would make more sense?
+    // ['http://roemers.io', 'path/to/page/', 'path/to/page'],
 
     ['https://roemers.io', null, 'https://roemers.io'],
     ['https://roemers.io', undefined, 'https://roemers.io'],

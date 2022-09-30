@@ -1,4 +1,5 @@
 {
+  // TODO activate typescript strict mode???
   "compilerOptions": {
     "jsx": "preserve",
     "esModuleInterop": true,

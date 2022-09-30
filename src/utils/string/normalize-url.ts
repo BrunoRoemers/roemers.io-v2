@@ -23,7 +23,8 @@ const normalizeUrl = (siteRoot: string, path: string): string => {
     return normalizedSiteRoot;
   }
 
-  if (isBlank(normalizedSiteRoot) && siteRoot !== '/') {
+  // site root is blank and the path does not start with a slash or domain
+  if (isBlank(siteRoot) && removeEnd(path, '/') === normalizedPath) {
     return normalizedPath;
   }
 

@@ -2,8 +2,14 @@ const path = require('path');
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://roemers.io',
-    title: 'roemers.io-v2',
+    title: 'roemers.io',
+    titleTemplate: '%s | roemers.io',
+    description:
+      'The personal homepage of Bruno Roemers, a software developer, curious human being and web3 citizen',
+    url: 'https://roemers.io',
+    ens: 'roemers.eth',
+    twitterHandle: 'brunoroemers',
+    linkedInHandle: 'bruno-roemers',
   },
   plugins: [
     'gatsby-plugin-postcss',

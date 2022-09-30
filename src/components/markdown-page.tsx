@@ -3,6 +3,7 @@ import * as React from 'react'
 import CodeBlock from './code-block'
 import Container from './container'
 import Link from './link'
+import SEO from './seo'
 import Theme from './theme'
 
 const h1 = ({children}) => <h1 className='text-6xl font-heading'>{children}</h1>
@@ -29,6 +30,7 @@ interface Props {
 const MarkdownPage = ({ children }: Props) => {
   return (
     <Theme>
+      <SEO/>
       <Container>
         <article className='mt-20'>
           {/* docs, see: https://www.gatsbyjs.com/docs/how-to/routing/customizing-components/ */}
