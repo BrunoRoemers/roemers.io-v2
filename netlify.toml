@@ -11,3 +11,7 @@
 [functions]
   # folder that contains netlify functions, relative to base
   directory = "functions/"
+
+[[redirects]]
+  from = "/*"
+  to = "https://linktr.ee/brunoroemers"
