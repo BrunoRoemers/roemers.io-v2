@@ -15,3 +15,5 @@
 [[redirects]]
   from = "/*"
   to = "https://linktr.ee/brunoroemers"
+  # redirect even if Gatsby has generated a page or asset
+  force = true
